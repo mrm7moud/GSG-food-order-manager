@@ -1,0 +1,34 @@
+{
+  "name": "gsg-food-order-manager",
+  "version": "1.0.0",
+  "description": "very simple website for order food",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrm7moud/GSG-food-order-manager.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mrm7moud/GSG-food-order-manager/issues"
+  },
+  "homepage": "https://github.com/mrm7moud/GSG-food-order-manager#readme",
+  "devDependencies": {
+    "istanbul": "^0.4.5",
+    "nodemon": "^1.11.0",
+    "shot": "^3.4.2",
+    "tap-spec": "^4.1.1",
+    "tape": "^4.8.0"
+  },
+  "dependencies": {
+    "env": "0.0.2",
+    "pg": "^7.1.2",
+    "request": "^2.81.0"
+  }
+}
