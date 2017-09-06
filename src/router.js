@@ -12,6 +12,10 @@ module.exports = (req, res) => {
     extension === 'png' ||
     extension === 'jpg') {
     handler.servePublic(req, res);
+  } else if (endpoint === '/allOrder') {
+    handler.sqlQueries(req, res);
+  } else if (endpoint === '/create-order') {
+    handler.setData(req, res);
   } else {
     handler.serveError(req, res);
   }
