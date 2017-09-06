@@ -1,5 +1,7 @@
 const fs = require('fs');
 const path = require('path');
+const setData = require('./setData.js');
+const sqlQueries = require('./dynamic');
 
 const handler = module.exports = {};
 
@@ -31,6 +33,29 @@ const readPublic = (res, endpoint) => {
       });
       res.end(file);
     }
+  });
+};
+
+handler.setData = (req, res) => {
+  let body = '';
+  req.on('data', (chunk) => {
+    body += chunk;
+  });
+  req.on('end', () => {
+    setData(body, (err, response) => {
+      if (err) console.log(err);
+      res.writeHead(301, {'Location': '/'});
+      res.end();
+    });
+  });
+};
+
+handler.sqlQueries = (req, res) => {
+  sqlQueries.getData((err, response) => {
+    if (err) throw err;
+    let SQLData = JSON.stringify(response);
+    res.writeHead(200, {'Content-Type': 'application/json'});
+    res.end(SQLData);
   });
 };
 

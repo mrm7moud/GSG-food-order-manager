@@ -2,15 +2,53 @@
 <html>
 
 <head>
-  <meta charset="utf-8">
-  <title>GSG Order Food Manager</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./css/stylesheet.css">
+    <meta charset="utf-8">
+    <title>GSG Orders Manager</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/stylesheet.css">
 </head>
 
 <body>
-
-  <script type="text/javascript" src="./js/main.js"></script>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#" class="brand-logo">GSG Orders Manager</a>
+        </div>
+    </nav>
+    <form class="form" action="/create-order" method="post">
+        <label for="usersName"></label>
+          <select id="usersName" placeholder="Your Name" name="name" class="label">
+            <option value=''>Select Your Name</option>
+            <option value='Abdallah'>Abdallah</option>
+            <option value='Ahmed'>Ahmed</option>
+            <option value='Eslam'>Eslam</option>
+            <option value='Aldahdouh'>Aldahdouh</option>
+            <option value='Almadhoun'>Almadhoun</option>
+            <option value='Alwadia'>Alwadia</option>
+            <option value='Moath'>Moath</option>
+            <option value='Samer'>Samer</option>
+            <option value='Walid'>Walid</option>
+            <option value='Hana'>Hana</option>
+            <option value='Qamar'>Qamar</option>
+            <option value='Ghadeer'>Ghadeer</option>
+            <option value='Aia'>Aia</option>
+            <option value='Sohad'>Sohad</option>
+            <option value='kefah'>kefah</option>
+            <option value='Salwa'>Salwa</option>
+          </select>
+        <input type="text" name="foodName" id="foodName" value="" placeholder="food Name">
+        <input type="number" name="price" id="price" value="" placeholder="Ex: 2 £" min="1" max="10">
+        <button type="submit" name="button">+ Add order</button>
+    </form>
+    <div class="table-container">
+        <table id="order-table">
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+            </tr>
+        </table>
+    </div>
+      <script type="text/javascript" src="./js/main.js"></script>
 </body>
 
 </html>
